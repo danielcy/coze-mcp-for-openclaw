@@ -113,11 +113,10 @@ uv run python coze_mcp.py
 工作流执行成功！
 
 **执行结果:**
-```json
 {
   "output": "处理结果"
 }
-```
+
 
 **资源使用:**
 - 输入Token: 50
@@ -157,39 +156,19 @@ uv run python coze_mcp.py
 
 ## 在AI客户端中配置
 
-### Claude Desktop
+### OpenClaw
 
-在Claude Desktop的配置文件中添加：
-
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+通过 mcporter 配置 OpenClaw，在配置文件中添加以下内容：
 
 ```json
 {
-  "mcpServers": {
-    "coze": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "d:\\AI\\coze-mcp",
-        "run",
-        "coze-mcp"
-      ]
-    }
+  "coze-mcp": {
+    "baseUrl": "http://localhost:33123/mcp"
   }
 }
 ```
 
-### Cursor
-
-在Cursor的设置中配置MCP服务器：
-
-1. 打开 `File -> Preferences -> Cursor Settings -> MCP`
-2. 添加新的MCP服务器配置
-3. 填写以下信息：
-   - Name: `coze-workflows`
-   - Command: `uv`
-   - Args: `--directory d:\AI\coze-mcp run coze-mcp`
+确保 Coze MCP 服务器正在运行，OpenClaw 将自动连接到该服务。
 
 ## 技能生成脚本
 
