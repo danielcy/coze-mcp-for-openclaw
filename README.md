@@ -54,10 +54,12 @@ uv sync
 # Coze API配置
 COZE_API_KEY=your_coze_api_key_here
 WORKSPACE_ID=your_workspace_id_here
+OPENCLAW_SKILLS_DIR=~/.openclaw/skills
 ```
 
 - `COZE_API_KEY`：你的Coze API密钥（个人访问令牌）
 - `WORKSPACE_ID`：你想要加载工作流的Workspace ID
+- `OPENCLAW_SKILLS_DIR`：OpenClaw技能目录
 
 ### 4. 运行MCP服务器
 
