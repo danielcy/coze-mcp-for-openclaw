@@ -199,7 +199,7 @@ async def refresh_workflows() -> str:
         return f"刷新工作流列表失败: {str(e)}"
 
 @mcp.tool()
-async def run_workflow_by_name(workflow_name: str, parameters: str = "{}") -> str:
+async def run_workflow_by_name(workflow_name: str, parameters: dict[str, Any] = {}) -> str:
     """根据工作流名称执行工作流
     
     Args:
@@ -221,7 +221,7 @@ async def run_workflow_by_name(workflow_name: str, parameters: str = "{}") -> st
         workflow_id = workflow_info["workflow_id"]
         
         try:
-            params = json.loads(parameters) if parameters else {}
+            params = parameters
         except json.JSONDecodeError:
             return f"参数格式错误，请提供有效的JSON字符串，例如: {{\"key\": \"value\"}}"
 

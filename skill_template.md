@@ -17,7 +17,7 @@ description: {workflow_description}
 
 ## mcporter调用方式
 ```bash
- mcporter call coze-mcp.run_workflow_by_name workflow_name='{workflow_name}' parameters='"{\"param1\":\"value1\",\"param2\":\"value2\"}"'
+ mcporter call "coze-mcp.run_workflow_by_name(workflow_name: 'shopping_goods_search', parameters: {param1: 'value1', param2: 'value2'})"
 ```
 
 ## 错误处理
